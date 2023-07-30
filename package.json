@@ -1,0 +1,38 @@
+{
+  "name": "@zerobridge-xyz/monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn build:accumulator-cli && yarn workspaces foreach -Apvt --exclude @zerobridge-xyz/deploy run bootstrap",
+    "bootup": "yarn local-environment run bootup",
+    "build": "yarn build:accumulator-cli && yarn workspaces foreach -Apvt --exclude @zerobridge-xyz/deploy run build",
+    "build:accumulator-cli": "cd scripts && ./build-acli.sh",
+    "chain-ops": "yarn workspace @zerobridge-xyz/chain-ops",
+    "compile": "yarn workspaces foreach -Apvt --exclude @zerobridge-xyz/deploy run compile",
+    "contracts-bridge": "yarn workspace @zerobridge-xyz/contracts-bridge",
+    "contracts-core": "yarn workspace @zerobridge-xyz/contracts-core",
+    "contracts-ops": "yarn workspace @zerobridge-xyz/contracts-ops",
+    "contracts-router": "yarn workspace @zerobridge-xyz/contracts-router",
+    "deploy": "yarn workspace @zerobridge-xyz/deploy",
+    "gen-proof": "scripts/accumulator-cli",
+    "indexer": "yarn workspace @zerobridge-xyz/indexer",
+    "lint": "yarn workspaces foreach -Apv --exclude @zerobridge-xyz/indexer run lint",
+    "local-environment": "yarn workspace @zerobridge-xyz/local-environment",
+    "multi-provider": "yarn workspace @zerobridge-xyz/multi-provider",
+    "zerobridge-cli": "yarn workspace @zerobridge-xyz/zerobridge-cli",
+    "prettier": "yarn workspaces foreach -Apvt run prettier",
+    "sdk": "yarn workspace @zerobridge-xyz/sdk",
+    "sdk-bridge": "yarn workspace @zerobridge-xyz/sdk-bridge",
+    "sdk-govern": "yarn workspace @zerobridge-xyz/sdk-govern",
+    "snapshot": "yarn workspaces foreach -Apvt --include @zerobridge-xyz/contracts-core --include @zerobridge-xyz/contracts-bridge run snapshot",
+    "snapshot:check": "yarn workspaces foreach -Apvt --include @zerobridge-xyz/contracts-core --include @zerobridge-xyz/contracts-bridge run snapshot:check",
+    "storage-inspect:check": "yarn workspaces foreach -Apvi --include @zerobridge-xyz/contracts-core --include @zerobridge-xyz/contracts-bridge --include @zerobridge-xyz/contracts-router run storage-inspect:check",
+    "storage-inspect:generate": "yarn workspaces foreach -Apvi --include @zerobridge-xyz/contracts-core --include @zerobridge-xyz/contracts-bridge --include @zerobridge-xyz/contracts-router run storage-inspect:generate",
+    "test:coverage": "yarn workspaces foreach -Apvi run test:coverage",
+    "test:integration": "yarn local-environment test:integration",
+    "test:unit": "yarn workspaces foreach -Apvt --exclude @zerobridge-xyz/deploy --exclude @zerobridge-xyz/contracts-ops run test:unit"
+  },
+  "packageManager": "yarn@3.2.0"
+}

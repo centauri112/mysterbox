@@ -1,0 +1,22 @@
+# Defaults
+* @zerobridge-xyz/engineering
+
+# Contracts packages
+packages/contracts-bridge/ @zerobridge-xyz/protocol
+packages/contracts-core/ @zerobridge-xyz/protocol
+packages/contracts-router/ @zerobridge-xyz/protocol
+packages/deploy/ @zerobridge-xyz/protocol
+packages/upgrade/ @zerobridge-xyz/protocol
+
+# SDK Packages
+packages/multi-provider/ @zerobridge-xyz/experience @prestwich
+packages/sdk/ @zerobridge-xyz/experience
+packages/sdk-govern/ @zerobridge-xyz/experience
+packages/sdk-bridge/ @zerobridge-xyz/experience
+
+# DevOps Packages
+packages/keymaster/ @zerobridge-xyz/devops
+
+# Other Packages
+packages/indexer/ @kekonen @Imti
+packages/local-environment/ @xBalbinus @kekonen
